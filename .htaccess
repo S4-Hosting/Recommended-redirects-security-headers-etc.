@@ -1,13 +1,12 @@
-** Force WWW to non-WWW **
-
 RewriteEngine On
-RewriteCond %{HTTP_HOST} !^www. [NC]
-RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 ** Force HTTP requests to use HTTPS **
-
 RewriteCond %{HTTPS} !on
 RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+** Force www to non-www **
+RewriteCond %{HTTP_HOST} ^www. [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 ** Set HSTS to force SSL connections **
 ** (You may want to change the max age to a lower number if not submitting to hstspreload.org) **
