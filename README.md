@@ -1,4 +1,4 @@
-# htaccess-additions-for-wp
+# .htaccess additions for WordPress
 
 Security Headers, etc. can be set at apache config levels or at .htaccess level for individual sites. 
 
