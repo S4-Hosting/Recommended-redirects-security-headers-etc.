@@ -1,0 +1,12 @@
+OpenLiteSpeed only takes notice of certain directives in the .htacces file. 
+It does not pay any attention to security headers added there, instead you will need to add them using OLS WebAdmin. 
+
+Add the following secuirty headers
+
+Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'"
+X-Frame-Options "SAMEORIGIN"
+X-Xss-Protection "1; mode=block"
+X-Content-Type-Options "nosniff"
+Referrer-Policy: no-referrer-when-downgrade
+Feature-Policy: accelerometer 'none'; camera 'none'; microphone 'none'
+Permissions-Policy "accelerometer=(), camera=(), microphone=()"
