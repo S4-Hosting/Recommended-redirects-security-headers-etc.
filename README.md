@@ -7,3 +7,5 @@ These are our recommended .htaccess additions for non-SSL to SSL redirect, enabl
 Note: If you are using an OpenLiteSpeed server then security header rules in .htaccess are ignore - see https://github.com/S4-Hosting/htaccess-additions-for-wp/blob/master/.htaccess
 
 Note: The 'Permissions Policy' header is a replacement for the 'Feature Policy' header which will be deprecated. We have included both as browser support for Permissions Policy is very low (as of 02/21).
+
+We've also added interest-cohort=() to ther Permissions Policy header as an opt-out of FLoC - see more about FLoC here: https://scotthelme.co.uk/what-the-floc/
