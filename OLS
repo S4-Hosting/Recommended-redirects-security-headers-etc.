@@ -9,4 +9,4 @@ X-Xss-Protection "1; mode=block"
 X-Content-Type-Options "nosniff"
 Referrer-Policy: no-referrer-when-downgrade
 Feature-Policy: accelerometer 'none'; camera 'none'; microphone 'none'
-Permissions-Policy "accelerometer=(), camera=(), microphone=()"
+Permissions-Policy "accelerometer=(), camera=(), microphone=(), interest-cohort=()"
