@@ -8,4 +8,4 @@ Note: If you are using an OpenLiteSpeed server then security header rules in .ht
 
 *Note: The 'Permissions Policy' header is a replacement for the 'Feature Policy' header which will be deprecated. We have included both as browser support for Permissions Policy is very low (as of 02/21).*
 
-*Note: We've also added interest-cohort=() to ther Permissions Policy header as an opt-out of FLoC - see more about FLoC here: https://scotthelme.co.uk/what-the-floc/ *
+*Note: We've also added interest-cohort=() to ther Permissions Policy header as an opt-out of FLoC - see more about FLoC here:* https://scotthelme.co.uk/what-the-floc/
