@@ -16,7 +16,7 @@ Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; prelo
 ** Set other security headers with basic options **
 ** You will need to add any sites that you load scripts, images or other resources from to the Content-Security-Policy header **
 
-Header always set Content-Security-Policy "default-src 'self' data: https://analytics.s-4.host"
+Header always set Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'"
 Header always set X-Frame-Options "SAMEORIGIN"
 Header always set X-Xss-Protection "1; mode=block"
 Header always set X-Content-Type-Options "nosniff"
