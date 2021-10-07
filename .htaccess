@@ -1,20 +1,26 @@
 RewriteEngine On
 
-** Force HTTP requests to use HTTPS **
-RewriteCond %{HTTPS} !on
-RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+## Set canonical as either www or non-www ##
+## (uncomment only one of these or things will break!) ## 
 
-** Force www to non-www **
+# Force www to non-www
 RewriteCond %{HTTP_HOST} ^www. [NC]
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-** Set HSTS to force SSL connections **
-** (You may want to change the max age to a lower number if not submitting to hstspreload.org) **
+# Force non-www to www
+# RewriteCond %{HTTP_HOST} !^www. [NC]
+# RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+## Force HTTP requests to use HTTPS ##
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+## Set HSTS to force SSL connections ##
+## (You may want to change the max age to a lower number if not submitting to hstspreload.org) ##
 Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
-** Set other security headers with basic options **
-** You will need to add any sites that you load scripts, images or other resources from to the Content-Security-Policy header **
+## Set other security headers with basic options ##
+## You will need to add any sites that you load scripts, images or other resources from to the Content-Security-Policy header ##
 
 Header always set Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'"
 Header always set X-Frame-Options "SAMEORIGIN"
